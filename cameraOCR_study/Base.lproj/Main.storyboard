@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ms0-7M-V1W">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -46,6 +46,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8" y="4"/>
+        </scene>
+        <!--Emoji Scanner View Controller-->
+        <scene sceneID="wOf-7B-KOf">
+            <objects>
+                <viewController id="ms0-7M-V1W" customClass="EmojiScannerViewController" customModule="cameraOCR_study" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yfR-bF-KaV">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdK-Q9-KHx">
+                                <rect key="frame" x="155" y="408.66666666666669" width="83" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="스캔시작"/>
+                                <connections>
+                                    <action selector="startScanTapped:" destination="ms0-7M-V1W" eventType="touchUpInside" id="uZc-9i-hHM"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="여기에 이모지가 나옵니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXR-xY-Ln4">
+                                <rect key="frame" x="27.333333333333343" y="483.66666666666669" width="338.33333333333326" height="40.666666666666686"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인식된글자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pl9-vU-y3F">
+                                <rect key="frame" x="159.66666666666666" y="555.33333333333337" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aYF-NU-Cpm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Pl9-vU-y3F" firstAttribute="top" secondItem="hXR-xY-Ln4" secondAttribute="bottom" constant="30.670000000000002" id="SVM-70-XCa"/>
+                            <constraint firstItem="RdK-Q9-KHx" firstAttribute="centerY" secondItem="yfR-bF-KaV" secondAttribute="centerY" id="dPh-9w-fQl"/>
+                            <constraint firstItem="hXR-xY-Ln4" firstAttribute="top" secondItem="RdK-Q9-KHx" secondAttribute="bottom" constant="40.329999999999998" id="fyX-MT-y4b"/>
+                            <constraint firstItem="hXR-xY-Ln4" firstAttribute="centerX" secondItem="yfR-bF-KaV" secondAttribute="centerX" id="h83-H0-qwW"/>
+                            <constraint firstItem="RdK-Q9-KHx" firstAttribute="centerX" secondItem="yfR-bF-KaV" secondAttribute="centerX" id="tfp-Ff-KSn"/>
+                            <constraint firstItem="Pl9-vU-y3F" firstAttribute="centerX" secondItem="yfR-bF-KaV" secondAttribute="centerX" id="ueW-Bg-U4h"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emojiLabel" destination="hXR-xY-Ln4" id="hEj-aW-qwD"/>
+                        <outlet property="recognizedText" destination="Pl9-vU-y3F" id="kdM-rE-R8c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JJy-By-7Ws" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1217.5572519083969" y="114.78873239436621"/>
         </scene>
     </scenes>
     <resources>
